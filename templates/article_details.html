@@ -1,0 +1,409 @@
+{% extends './base/layout.html' %}
+{% load static %}
+{% block content %}
+	<section id="page-title" class="page-title-dark page-title-parallax page-title-center"
+		style="background: linear-gradient(to bottom, rgba(6, 54, 57,.9), rgba(6, 54, 57,.9)), url('/static/front/demos/nonprofit/images/cause/page-title.jpg') no-repeat center center; background-size: cover; padding: 120px 0;">
+		<div class="container clearfix">
+			{% for detail in details %}
+				<h1 class="mb-3">{{detail.title}}</h1>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/">Accueil</a></li>
+					<li class="breadcrumb-item"><a href="#"></a>Details</li>
+					<li class="breadcrumb-item active" aria-current="page">{{detail.title}}</li>
+				</ol>
+			{%endfor%}
+		</div>
+	</section>
+
+	<section id="content">
+		<div class="content-wrap">
+			<div class="container">
+				<div class="row gutter-40 col-mb-80">
+					{% for detail in details %}
+						<div class="postcontent col-lg-9">
+							<div class="single-post mb-0">
+								<div class="entry clearfix">
+									<div class="entry-image mb-0">
+										<a href="#"><img src="{{detail.img}}"
+												alt="{{detail.title}}">
+										</a>
+									</div>
+									<!-- <div class="card bg-color-light rounded-0 my-4">
+										<div class="card-body py-4 px-5">
+											<div class="d-flex justify-content-between">
+												<div class="counter counter-inherit d-flex justify-content-between">
+													<strong class="me-1 ls0">Donated:</strong> $<span data-from="0"
+														data-to="115700" data-refresh-interval="10" data-speed="1100"
+														data-comma="true"></span>
+												</div>
+												<span><strong>Target:</strong> $210,000</span>
+											</div>
+											<ul class="skills pt-3 mb-2">
+												<li data-percent="81">
+													<div class="progress">
+														<div class="progress-percent">
+															<div class="counter counter-inherit counter-instant"><span
+																	data-from="0" data-to="81"
+																	data-refresh-interval="30"
+																	data-speed="1100"></span>%</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div> -->
+
+									<div class="entry-content mt-0">
+										<p>{{detail.content}}</p>
+
+										<div class="clear"></div>
+
+										<div class="si-share  d-flex justify-content-between align-items-center">
+											<span>Partager l&apos;article:</span>
+											<div>
+												<a href="https://www.facebook.com/tuwindi/" class="social-icon si-borderless si-facebook" title="Facebook">
+													<i class="icon-facebook"></i>
+													<i class="icon-facebook"></i>
+												</a>
+												<a href="https://twitter.com/tuwindi" class="social-icon si-borderless si-twitter" title="Twitter">
+													<i class="icon-twitter"></i>
+													<i class="icon-twitter"></i>
+												</a>
+												<a href="https://linkedin.com/company/tuwindi" class="social-icon si-borderless si-linkedin" title="LinkedIn">
+													<i class="icon-linkedin"></i>
+													<i class="icon-linkedin"></i>
+												</a>
+												<a href="#" class="social-icon si-borderless si-gplus" title="Google Plus">
+													<i class="icon-gplus"></i>
+													<i class="icon-gplus"></i>
+												</a>
+												<!-- <a href="#" class="social-icon si-borderless si-rss">
+													<i class="icon-rss"></i>
+													<i class="icon-rss"></i>
+												</a> -->
+												<a href="mailto:?subject={{detail.title}}&amp;body=conten de l\'article" class="social-icon si-borderless si-email3" title="Email">
+													<i class="icon-email3"></i>
+													<i class="icon-email3"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div id="comments" class="clearfix border-0">
+									<h3 id="comments-title"><span></span> Commentaires</h3>
+									<p>Pas de commentaire pour le moment</p>
+									<!-- <ol class="commentlist clearfix">
+										<li class="comment even thread-even depth-1" id="li-comment-1">
+											<div id="comment-1" class="comment-wrap clearfix">
+												<div class="comment-meta">
+													<div class="comment-author vcard">
+														<span class="comment-avatar clearfix">
+															<img alt='Image'
+																src='https://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60'
+																class='avatar avatar-60 photo avatar-default'
+																height='60' width='60' /></span>
+													</div>
+												</div>
+												<div class="comment-content clearfix">
+													<div class="comment-author">John Doe<span><a href="#"
+																title="Permalink to this comment">April 24, 2012 at
+																10:46 am</a></span></div>
+													<p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue.
+														Nullam id dolor id nibh ultricies vehicula ut id elit. Integer
+														posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+													<a class='comment-reply-link' href='#'><i
+															class="icon-reply"></i></a>
+												</div>
+												<div class="clear"></div>
+											</div>
+											<ul class='children'>
+												<li class="comment byuser comment-author-_smcl_admin odd alt depth-2"
+													id="li-comment-3">
+													<div id="comment-3" class="comment-wrap clearfix">
+														<div class="comment-meta">
+															<div class="comment-author vcard">
+																<span class="comment-avatar clearfix">
+																	<img alt='Image'
+																		src='https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G'
+																		class='avatar avatar-40 photo' height='40'
+																		width='40' /></span>
+															</div>
+														</div>
+														<div class="comment-content clearfix">
+															<div class="comment-author"><a href='#'
+																	rel='external nofollow'
+																	class='url'>SemiColon</a><span><a href="#"
+																		title="Permalink to this comment">April 25, 2012
+																		at 1:03 am</a></span></div>
+															<p>Nullam id dolor id nibh ultricies vehicula ut id elit.
+															</p>
+															<a class='comment-reply-link' href='#'><i
+																	class="icon-reply"></i></a>
+														</div>
+														<div class="clear"></div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li class="comment byuser comment-author-_smcl_admin even thread-odd thread-alt depth-1"
+											id="li-comment-2">
+											<div id="comment-2" class="comment-wrap clearfix">
+												<div class="comment-meta">
+													<div class="comment-author vcard">
+														<span class="comment-avatar clearfix">
+															<img alt='Image'
+																src='https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=60&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G'
+																class='avatar avatar-60 photo' height='60'
+																width='60' /></span>
+													</div>
+												</div>
+												<div class="comment-content clearfix">
+													<div class="comment-author"><a
+															href='https://themeforest.net/user/semicolonweb'
+															rel='external nofollow' class='url'>SemiColon</a><span><a
+																href="#" title="Permalink to this comment">April 25,
+																2012 at 1:03 am</a></span></div>
+													<p>Integer posuere erat a ante venenatis dapibus posuere velit
+														aliquet.</p>
+													<a class='comment-reply-link' href='#'><i
+															class="icon-reply"></i></a>
+												</div>
+												<div class="clear"></div>
+											</div>
+										</li>
+									</ol> -->
+									<div class="clear"></div>
+
+									<div id="respond">
+										<h3>Laisser un <span>Commentaire</span></h3>
+										<form class="row" action="#" method="post" id="commentform">
+											<div class="col-md-4 form-group">
+												<label for="author">Nom</label>
+												<input type="text" name="author" id="author" value="" size="22"
+													tabindex="1" class="form-control" />
+											</div>
+											<div class="col-md-4 form-group">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" value="" size="22"
+													tabindex="2" class="form-control" />
+											</div>
+											<!-- <div class="col-md-4 form-group">
+												<label for="url">Website</label>
+												<input type="text" name="url" id="url" value="" size="22" tabindex="3"
+													class="form-control" />
+											</div> -->
+											<div class="w-100"></div>
+											<div class="col-12 form-group">
+												<label for="comment">Commentaire</label>
+												<textarea name="comment" id="comment" cols="58" rows="7" tabindex="4"
+													class="form-control"></textarea>
+											</div>
+											<div class="col-12 form-group">
+												<button name="submit" type="submit" id="submit-button" tabindex="5"
+													value="Submit"
+													class="button button-rounded button-border nott ls0 fw-normal border-color m-0">Soumettre le
+													Commentaire</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					<div class="sidebar col-lg-3">
+						<div class="sidebar-widgets-wrap">
+							<div class="widget widget-twitter-feed clearfix">
+								<h4>Twitter</h4>
+								<ul class="iconlist twitter-feed" data-username="envato" data-count="2">
+									<li></li>
+								</ul>
+								<a href="https://twitter.com/tuwindi" class="btn btn-secondary btn-sm float-end">Suivez nous sur Twitter</a>
+							</div>
+							<div class="widget clearfix">
+								<div class="tabs mb-0 clearfix" id="sidebar-tabs">
+									<ul class="tab-nav clearfix">
+										<li><a href="#tabs-1">Populaires</a></li>
+										<li><a href="#tabs-2">Recents</a></li>
+										<li><a href="#tabs-3"><i class="icon-comments-alt me-0"></i></a></li>
+									</ul>
+									<div class="tab-container">
+										<div class="tab-content clearfix" id="tabs-1">
+											<div class="posts-sm row col-mb-30" id="popular-post-list-sidebar">
+												<div class="entry col-12">
+													<div class="grid-inner row g-0">
+														<div class="col-auto">
+															<div class="entry-image">
+																<a href="#"><img class="rounded-circle"
+																		src="{{detail.img}}"
+																		alt="Image"></a>
+															</div>
+														</div>
+														<div class="col ps-3">
+															<div class="entry-title">
+																<h4><a href="#">{{detail.title}}</a></h4>
+															</div>
+															<div class="entry-meta">
+																<ul>
+																	<li><i class="icon-comments-alt"></i> 0
+																		Commentaire(s)</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- <div class="entry col-12">
+													<div class="grid-inner row g-0">
+														<div class="col-auto">
+															<div class="entry-image">
+																<a href="#"><img class="rounded-circle"
+																		src="images/magazine/small/2.jpg"
+																		alt="Image"></a>
+															</div>
+														</div>
+														<div class="col ps-3">
+															<div class="entry-title">
+																<h4><a href="#">Elit Assumenda vel amet dolorum
+																		quasi</a></h4>
+															</div>
+															<div class="entry-meta">
+																<ul>
+																	<li><i class="icon-comments-alt"></i> 24
+																		Comments</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="entry col-12">
+													<div class="grid-inner row g-0">
+														<div class="col-auto">
+															<div class="entry-image">
+																<a href="#"><img class="rounded-circle"
+																		src="images/magazine/small/1.jpg"
+																		alt="Image"></a>
+															</div>
+														</div>
+														<div class="col ps-3">
+															<div class="entry-title">
+																<h4><a href="#">Debitis nihil placeat, illum est
+																		nisi</a></h4>
+															</div>
+															<div class="entry-meta">
+																<ul>
+																	<li><i class="icon-comments-alt"></i> 19
+																		Comments</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div> -->
+											</div>
+										</div>
+										<div class="tab-content clearfix" id="tabs-2">
+											<div class="posts-sm row col-mb-30" id="recent-post-list-sidebar">
+												<div class="entry col-12">
+													<div class="grid-inner row g-0">
+														<div class="col-auto">
+															<div class="entry-image">
+																<a href="#"><img class="rounded-circle"
+																		src="{{detail.img}}"
+																		alt="Image"></a>
+															</div>
+														</div>
+														<div class="col ps-3">
+															<div class="entry-title">
+																<h4><a href="#">{{detail.title}}</a></h4>
+															</div>
+															<div class="entry-meta">
+																<ul>
+																	<li>{{detail.createDate}}</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-content clearfix" id="tabs-3">
+											<div class="posts-sm row col-mb-30" id="recent-comments-list-sidebar">
+												<div class="entry col-12">
+													<div class="grid-inner row g-0">
+														<div class="col-auto">
+															<div class="entry-image">
+																<a href="#"><img class="rounded-circle"
+																		src="/static/front/demos/nonprofit/images/icons/user.png"
+																		alt="User Avatar"></a>
+															</div>
+														</div>
+														<div class="col ps-3">
+															<strong>Auteur :</strong> 
+															<p>commentaire...</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="s-icons" class="widget clearfix">
+								<h4 class="highlight-me">Retrouvez nous sur les r&eacute;seaux sociaux</h4>
+								<a href="#" class="social-icon si-colored si-facebook" title="Facebook">
+									<i class="icon-facebook"></i>
+									<i class="icon-facebook"></i>
+								</a>
+								<a href="#" class="social-icon si-colored si-twitter" title="Twitter">
+									<i class="icon-twitter"></i>
+									<i class="icon-twitter"></i>
+								</a>
+								<a href="#" class="social-icon si-colored si-linkedin" title="LinkedIn">
+									<i class="icon-linkedin"></i>
+									<i class="icon-linkedin"></i>
+								</a>
+								<a href="#" class="social-icon si-colored si-gplus" title="Google Plus">
+									<i class="icon-gplus"></i>
+									<i class="icon-gplus"></i>
+								</a>
+							</div>
+							<div class="widget clearfix">
+								<h4>Tags</h4>
+								<div class="tagcloud">
+									<p>Liste des etiquettes</p>
+									<!-- <a href="#">general</a>
+									<a href="#">videos</a>
+									<a href="#">music</a>
+									<a href="#">media</a>
+									<a href="#">photography</a>
+									<a href="#">parallax</a>
+									<a href="#">ecommerce</a>
+									<a href="#">terms</a>
+									<a href="#">coupons</a>
+									<a href="#">modern</a> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{%endfor%}
+
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<script>
+		jQuery(document).ready(function ($) {
+			var elementParent = $('.floating-contact-wrap');
+			$('.floating-contact-btn, .btn-contact').off('click').on('click', function (e) {
+				elementParent.toggleClass('active',);
+				e.preventDefault(e);
+			});
+		});
+	</script>
+	<script defer
+		src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
+		integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+		data-cf-beacon='{"rayId":"6e9a8c7d5ef81ed8","token":"0627f0b8b73941069bc19139e63db853","version":"2021.12.0","si":100}'
+		crossorigin="anonymous">
+	</script>
+{% endblock %}

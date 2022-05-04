@@ -1,0 +1,143 @@
+{% extends './base/layout.html' %}
+{% load static %}
+{% block content %}
+    <section id="content">
+        <div class="content-wrap">
+            <a href="#" style="background-color : gray" class="button button-full button-gray center text-end header-stick bottommargin-lg">
+                <div class="container clearfix">
+                    Vous avez des id&eacute;s et avez besoin d&apos;accompagnement ? <strong>Discutons !</strong> <i
+                        class="icon-caret-right" style="top:4px;"></i>
+                </div>
+            </a>
+            <div class="container clearfix">
+                <div class="heading-block center border-bottom-0 bottommargin-lg">
+                    <h1>Decouvrez nos technologies et initiatives</h1>
+                    <span>Specializes in creating Brand Identity for emerging Startups</span>
+                </div>
+                <!-- <div class="row justify-content-center col-mb-50">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="heading-block fancy-title border-bottom-0 title-bottom-border">
+                            <h4>Why choose <span>Us</span>.</h4>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis,
+                            nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo
+                            labore enim repellat earum perspiciatis.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="heading-block fancy-title border-bottom-0 title-bottom-border">
+                            <h4>Our <span>Mission</span>.</h4>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis,
+                            nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo
+                            labore enim repellat earum perspiciatis.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="heading-block fancy-title border-bottom-0 title-bottom-border">
+                            <h4>What we <span>Do</span>.</h4>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis,
+                            nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo
+                            labore enim repellat earum perspiciatis.</p>
+                    </div>
+                </div> -->
+            </div>
+            <div class="section mb-0">
+                <div class="container">
+                    <div class="grid-filter-wrap">
+                        <ul class="grid-filter" data-container="#portfolio">
+                            <li class="activeFilter"><a href="#" data-filter="*">Tout</a></li>
+                            <li><a href="#" data-filter=".pf-icons">Technologies</a></li>
+                            <li><a href="#" data-filter=".pf-illustrations">Initiatives</a></li>
+                        </ul>
+                        <div class="grid-shuffle" data-container="#portfolio">
+                            <i class="icon-random"></i>
+                        </div>
+                    </div>
+
+                    <div id="portfolio" class="portfolio row grid-container g-0" data-layout="fitRows">
+                        {% for projet in projects%}
+                        <article class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-12 pf-media pf-icons">
+                            <div class="grid-inner">
+                                <div class="portfolio-image">
+                                    <a href="portfolio-single.html">
+                                        <img src="static/front/images/portfolio/4/1.jpg" alt="Open Imagination">
+                                    </a>
+                                    <div class="bg-overlay">
+                                        <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
+                                            <a href="static/front/images/portfolio/full/1.jpg"
+                                                class="overlay-trigger-icon bg-light text-dark"
+                                                data-hover-animate="fadeInDownSmall"
+                                                data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350"
+                                                data-lightbox="image" title="Image"><i
+                                                    class="icon-line-plus"></i></a>
+                                            <a href="portfolio-single.html"
+                                                class="overlay-trigger-icon bg-light text-dark"
+                                                data-hover-animate="fadeInDownSmall"
+                                                data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350"><i
+                                                    class="icon-line-ellipsis"></i></a>
+                                        </div>
+                                        <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="portfolio-desc">
+                                    <h3><a href="portfolio-single.html">Open Imagination</a></h3>
+                                    <span><a href="#">Media</a>, <a href="#">Icons</a></span>
+                                </div>
+
+                            </div>
+
+                        </article>
+                        {%endfor%}
+                       
+                    </div>
+                </div>
+            </div>
+            <!-- <div id="oc-clients-full"
+                class="owl-carousel owl-carousel-full image-carousel footer-stick carousel-widget" data-margin="30"
+                data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false" data-items-xs="3"
+                data-items-sm="4" data-items-md="5" data-items-lg="6" data-items-xl="7" style="padding: 30px 0;">
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/1.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/2.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/3.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/4.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/5.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/6.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/7.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/8.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/9.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/10.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/11.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/12.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/13.png"
+                            alt="Clients"></a></div>
+                <div class="oc-item"><a href="https://logofury.com/"><img src="static/front/images/clients/14.png"
+                            alt="Clients"></a></div>
+            </div> -->
+        </div>
+    </section>
+
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <script data-cfasync="false"
+        src="https://themes.semicolonweb.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
+        integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+        data-cf-beacon='{"rayId":"6e955fc1fe1b8a69","token":"0627f0b8b73941069bc19139e63db853","version":"2021.12.0","si":100}'
+        crossorigin="anonymous"></script>
+{% endblock %}

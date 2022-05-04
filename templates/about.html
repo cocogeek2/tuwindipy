@@ -1,0 +1,391 @@
+{% extends './base/layout.html' %}
+{% load static %}
+{% block content %}
+{% for infos in infos %}
+	<section id="slider" class="slider-element swiper_wrapper min-vh-75 justify-content-start dark"
+		style="background: #063639">
+		<div class="container">
+			<div class="row h-100 align-items-center justify-content-between">
+				<div class="col-lg-4 col-md-6 py-5 py-md-0">
+					<div class="heading-block border-bottom-0 mb-4">
+						<h5 class="mb-1 text-uppercase ls2 op-06">Notre identit&eacute;?</h5>
+						<h2 class="mb-4 nott">Qui sommes-nous ?</h2>
+					</div>
+					<div class="svg-line bottommargin-sm">
+						<img src="/static/front/demos/nonprofit/images/divider-1.svg" alt="svg divider" height="20">
+					</div>
+					<p class="mb-5">{{infos.slogan}}</p>
+					<a href="#collabore"
+						class="button button-rounded button-xlarge button-light shadow nott ls0 m-0">Travaillons ensemble</a>
+				</div>
+				<div class="col-lg-8 col-md-6">
+					<img  style="margin-top: 40px!important;" src="/static/front/demos/nonprofit/images/about/1.png" alt="Image" class="full-width-img">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="content">
+		<div class="content-wrap py-0 overflow-visible">
+			<div class="container">
+				<div class="slider-feature">
+					<div class="row gutter-10 justify-content-center">
+
+						<div class="col-md-3">
+							<div
+								class="card center border-start-0 border-end-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 fw-semibold text-uppercase ls1 h-translate-y-sm all-ts">
+								<div class="card-body">
+									<img src="{% static 'front/demos/nonprofit/images/icons/education.svg' %}" alt="Counter Icon"
+										width="70" class="mb-4">
+									<div class="counter font-secondary"><span data-from="100" data-to="11265"
+											data-refresh-interval="50" data-speed="2100" data-comma="true"></span>+
+									</div>
+									<h5 class="nott ls0 mb-0 mt-2 text-muted">Projets r&eacute;alis&eacute;s</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div
+								class="card center border-start-0 border-end-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 fw-semibold text-uppercase ls1 h-translate-y-sm all-ts">
+								<div class="card-body">
+									<img src="{% static 'front/demos/nonprofit/images/icons/educated.svg' %}" alt="Counter Icon"
+										width="70" class="mb-4">
+									<div class="counter font-secondary"><span data-from="100" data-to="2500"
+											data-refresh-interval="50" data-speed="2200" data-comma="true"></span>+
+									</div>
+									<h5 class="nott ls0 mb-0 mt-2 text-muted">Domaines couverts</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div
+								class="card center border-start-0 border-end-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 fw-semibold text-uppercase ls1 h-translate-y-sm all-ts">
+								<div class="card-body">
+									<img src="{% static 'front/demos/nonprofit/images/icons/volunteers.svg' %}" alt="Counter Icon"
+										width="70" class="mb-4">
+									<div class="counter font-secondary"><span data-from="100" data-to="17408"
+											data-refresh-interval="25" data-speed="2300" data-comma="true"></span>+
+									</div>
+									<h5 class="nott ls0 mb-0 mt-2 text-muted">Personnes form&eacute;es</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div
+								class="card center border-start-0 border-end-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 fw-semibold text-uppercase ls1 h-translate-y-sm all-ts">
+								<div class="card-body">
+									<img src="/static/front/demos/nonprofit/images/icons/shelter.svg" alt="Counter Icon"
+										width="70" class="mb-4">
+									<div class="counter font-secondary"><span data-from="150" data-to="13413"
+											data-refresh-interval="50" data-speed="2100" data-comma="true"></span>+
+									</div>
+									<h5 class="nott ls0 mb-0 mt-2 text-muted">Partenaires</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="section m-0 bg-transparent pt-0">
+				<div class="container clearfix">
+					<div class="row">
+						<div class="col-lg-8">
+							<h3 class="mb-2">Nos Missions <span>&amp;</span> Objectifs</h3>
+							<div class="svg-line mb-2 clearfix">
+								<img src="/static/front/demos/nonprofit/images/divider-1.svg" alt="svg divider" height="10">
+							</div>
+							<p class="mb-5">Missions & objectifs texte</p>
+							<div class="row mission-goals gutter-30 mb-0">
+								{% for mission in mission %}
+								<div class="col-md-6">
+									<div class="feature-box fbox-plain bg-white mx-0">
+										<div class="fbox-media position-relative col-auto p-0 me-4">
+											<img src="{{missions.img}}" alt="Featured Icon 1"
+												width="50">
+										</div>
+										<div class="fbox-content">
+											<h3 class="nott ls0"><a href="#" class="text-dark">{{mission.label}}</a></h3>
+											<p>{{mission.label}}</p>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+								<!-- <div class="col-md-6">
+									<div class="feature-box fbox-plain bg-white mx-0">
+										<div class="fbox-media position-relative col-auto p-0 me-4">
+											<img src="/static/front/demos/nonprofit/images/icons/health.svg" alt="Featured Icon 2"
+												width="50">
+										</div>
+										<div class="fbox-content">
+											<h3 class="nott ls0"><a href="#" class="text-dark">Health Charities.</a>
+											</h3>
+											<p>Continually restore adaptive paradigms after "outside.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="feature-box fbox-plain bg-white mx-0">
+										<div class="fbox-media position-relative col-auto p-0 me-4">
+											<img src="/static/front/demos/nonprofit/images/icons/education.svg"
+												alt="Featured Icon 3" width="50">
+										</div>
+										<div class="fbox-content">
+											<h3 class="nott ls0"><a href="#" class="text-dark">Education
+													Charities.</a></h3>
+											<p>Quickly benchmark client-centered vortals without cutting.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="feature-box fbox-plain bg-white mx-0">
+										<div class="fbox-media position-relative col-auto p-0 me-4">
+											<img src="/static/front/demos/nonprofit/images/icons/animal.svg" alt="Featured Icon 4"
+												width="50">
+										</div>
+										<div class="fbox-content">
+											<h3 class="nott ls0"><a href="#" class="text-dark">Animal Charities.</a>
+											</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="feature-box fbox-plain bg-white mx-0">
+										<div class="fbox-media position-relative col-auto p-0 me-4">
+											<img src="/static/front/demos/nonprofit/images/icons/environmental.svg"
+												alt="Featured Icon 5" width="50">
+										</div>
+										<div class="fbox-content">
+											<h3 class="nott ls0"><a href="#" class="text-dark">Eco Charities.</a>
+											</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="feature-box fbox-plain bg-white mx-0">
+										<div class="fbox-media position-relative col-auto p-0 me-4">
+											<img src="/static/front/demos/nonprofit/images/icons/food.svg" alt="Featured Icon 6"
+												width="50">
+										</div>
+										<div class="fbox-content">
+											<h3 class="nott ls0"><a href="#" class="text-dark">Food Charities.</a>
+											</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div> -->
+							</div>
+						</div>
+						<div class="col-lg-4 mt-5 mt-lg-0">
+							<h3 class="mb-2">Mediath&egrave;que</h3>
+							<div class="svg-line mb-2 clearfix">
+								<img src="/static/front/demos/nonprofit/images/divider-1.svg" alt="svg divider" height="10">
+							</div>
+							<p class="mb-5">Revivez nos moments en vid&eacute;os </p>
+							<div class="clear"></div>
+							{% for media in mediatheque %}
+							<a href="{{media.label}}" data-lightbox="iframe"
+								class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+								style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01)), url('{{mission.media}}') no-repeat center center / cover; height: 300px"><i
+									class="icon-play"></i></a>
+							<!-- <div class="row mt-4" data-lightbox="gallery">
+								<div class="col-sm-6">
+									<a href="{{media.label}}" data-lightbox="iframe"
+										class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color left"
+										style="background: url('/static/front/demos/nonprofit/images/others/4.jpg') no-repeat center center / cover; height: 140px"><i
+											class="icon-play icon-small"></i></a>
+								</div>
+								<div class="col-sm-6 mt-4 mt-sm-0">
+									<a href="https://www.youtube.com/watch?v=VqmFKnHG5q8" data-lightbox="iframe"
+										class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color left"
+										style="background: url('/static/front/demos/nonprofit/images/others/2.jpg') no-repeat center center / cover; height: 140px"><i
+											class="icon-play icon-small"></i></a>
+								</div>
+							</div> -->
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="section mt-3"
+				style="background: url('/static/front/demos/nonprofit/images/others/section-bg.jpg') no-repeat center center / cover; padding: 80px 0;">
+				<div class="container clearfix">
+					<div class="row justify-content-center mb-5">
+						<div class="col-md-7 center">
+							<div class="heading-block border-bottom-0 mb-4">
+								<h2 class="mb-4 nott">Happy Volunteers</h2>
+							</div>
+							<div class="svg-line bottommargin-sm clearfix">
+								<img src="/static/front/demos/nonprofit/images/divider-1.svg" alt="svg divider" height="20">
+							</div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quasi, dolorum
+								blanditiis eius laboriosam, quidem temporibus, dolor quod voluptatum perferendis
+								ullam. Odio sequi at dolore consequatur ad, odit expedita tenetur.</p>
+						</div>
+					</div>
+					<div class="row justify-content-around">
+						<div class="col-lg-2 col-md-4 col-6">
+							<div class="team overflow-hidden">
+								<div class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/1.jpg" alt="Penny Tool">
+								</div>
+								<div class="team-desc">
+									<h4 class="team-title pt-3 mb-0 fw-medium nott">Penny
+										Tool<small>Volunteers</small></h4>
+								</div>
+							</div>
+							<div class="team mt-5">
+								<div class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/6.jpg" alt="Piff Jenkins">
+								</div>
+								<div class="team-desc">
+									<h4 class="team-title pt-3 mb-0 fw-medium nott">Piff
+										Jenkins<small>Volunteers</small></h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-4 col-6 mt-4">
+							<div class="team">
+								<div class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/2.jpg" alt="Rodney Artich">
+								</div>
+								<div class="team-desc">
+									<h4 class="team-title pt-3 mb-0 fw-medium nott">Rodney
+										Artich<small>Volunteers</small></h4>
+								</div>
+							</div>
+							<div class="team mt-5">
+								<div class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/7.jpg" alt="Weir Doe">
+								</div>
+								<div class="team-desc">
+									<h4 class="team-title pt-3 mb-0 fw-medium nott">Weir
+										Doe<small>Volunteers</small></h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-4 col-6">
+							<div class="team">
+								<div class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/3.jpg" alt="Jackson Pot">
+								</div>
+								<div class="team-desc">
+									<h4 class="team-title pt-3 mb-0 fw-medium nott">Jackson
+										Pot<small>Volunteers</small></h4>
+								</div>
+							</div>
+							<div class="team mt-5">
+								<div class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/8.jpg" alt="Phillip Anthropy ">
+								</div>
+								<div class="team-desc">
+									<h4 class="team-title pt-3 mb-0 fw-medium nott">Phillip Anthropy
+										<small>Volunteers</small></h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-4 col-6 mt-5">
+							<div class="team">
+								<div class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/4.jpg" alt="Eric Widget">
+								</div>
+								<div class="team-desc">
+									<h4 class="team-title pt-3 mb-0 fw-medium nott">Eric
+										Widget<small>Volunteers</small></h4>
+								</div>
+							</div>
+							<div class="team mt-5">
+								<div class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/9.jpg" alt="Giles Posture">
+								</div>
+								<div class="team-desc">
+									<h4 class="team-title pt-3 mb-0 fw-medium nott">Giles
+										Posture<small>Volunteers</small></h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-4 col-6 mt-1">
+							<div class="team">
+								<div class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/5.jpg" alt="Gunther Beard">
+								</div>
+								<div class="team-desc">
+									<h4 class="team-title pt-3 mb-0 fw-medium nott">Gunther
+										Beard<small>Volunteers</small></h4>
+								</div>
+							</div>
+							<div class="team full-border imagescalein mt-5">
+								<a href="#" class="team-image">
+									<img src="/static/front/demos/nonprofit/images/volunteers/10.jpg" alt="Apply Volunteer"
+										class="rounded-0">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div class="section bg-transparent">
+				<div class="container clearfix">
+					<div class="row justify-content-center">
+						<div class="col-md-7 center">
+							<div class="heading-block border-bottom-0 mb-4">
+								<h2 class="mb-4 nott">Ce que nos partenaires disent de nous</h2>
+							</div>
+							<div class="svg-line bottommargin-sm clearfix">
+								<img src="/static/front/demos/nonprofit/images/divider-1.svg" alt="svg divider" height="15">
+							</div>
+							<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quasi, dolorum
+								blanditiis eius laboriosam, quidem temporibus, dolor quod voluptatum perferendis
+								ullam. Odio sequi at dolore consequatur ad, odit expedita tenetur.</p> -->
+						</div>
+						<div class="clear"></div>
+						<div class="col-md-11 my-5">
+							<!-- <ul class="clients-grid grid-2 grid-sm-3 grid-md-5 mb-0">
+								<li class="grid-item"><a href="#"><img src="images/clients/1.png" alt="Clients"></a>
+								</li>
+								<li class="grid-item"><a href="#"><img src="images/clients/2.png" alt="Clients"></a>
+								</li>
+								<li class="grid-item"><a href="#"><img src="images/clients/3.png" alt="Clients"></a>
+								</li>
+								<li class="grid-item"><a href="#"><img src="images/clients/4.png" alt="Clients"></a>
+								</li>
+								<li class="grid-item"><a href="#"><img src="images/clients/5.png" alt="Clients"></a>
+								</li>
+								<li class="grid-item"><a href="#"><img src="images/clients/6.png" alt="Clients"></a>
+								</li>
+								<li class="grid-item"><a href="#"><img src="images/clients/7.png" alt="Clients"></a>
+								</li>
+								<li class="grid-item"><a href="#"><img src="images/clients/8.png" alt="Clients"></a>
+								</li>
+								<li class="grid-item"><a href="#"><img src="images/clients/9.png" alt="Clients"></a>
+								</li>
+								<li class="grid-item"><a href="#"><img src="images/clients/10.png"
+											alt="Clients"></a></li>
+							</ul> -->
+						</div>
+						<h4 class="fw-normal text-black-50 mb-0 text-center">Vous voulez faire partie de notre grande famille ? <a
+								href="#"><u>Ecrivez nous ici</u></a>.</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% endfor %}
+
+	<script>
+		jQuery(document).ready(function ($) {
+			var elementParent = $('.floating-contact-wrap');
+			$('.floating-contact-btn, .btn-contact').off('click').on('click', function (e) {
+				elementParent.toggleClass('active',);
+				e.preventDefault(e);
+			});
+		});
+	</script>
+	<script defer
+		src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
+		integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+		data-cf-beacon='{"rayId":"6e9a8c83b8c41ed8","token":"0627f0b8b73941069bc19139e63db853","version":"2021.12.0","si":100}'
+		crossorigin="anonymous"></script>
+{% endblock %}

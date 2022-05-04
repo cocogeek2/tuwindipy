@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+{% load static %}
+<html dir="ltr" lang="en-US">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Tuwindi" />
+
+    <link rel="stylesheet" href="{% static 'front/css/bootstrap.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&amp;family=Poppins:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'front/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'front/css/swiper.css' %}">
+	<link rel="stylesheet" href="{% static 'front/css/dark.css' %}">
+	<link rel="stylesheet" href="{% static 'front/css/font-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'front/css/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'front/css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'front/css/custom.css' %}">
+	<link rel="stylesheet" href="{% static 'front/css/calendar.css' %}">
+	<link rel="stylesheet" href="{% static 'front/css/colorsa0f9.css?color=C6C09C' %}">
+	<link rel="stylesheet" href="{% static 'front/demos/nonprofit/css/fonts.css' %}">
+	<link rel="stylesheet" href="{% static 'front/demos/nonprofit/nonprofit.css' %}">
+
+	<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+
+	<title>Tuwindi</title>
+</head>
+
+<body class="stretched">
+
+	<div id="wrapper" class="clearfix">
+
+		<header id="header" class="header-size-sm border-bottom-0" data-sticky-shrink="false">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row justify-content-lg-between">
+						<div id="logo" class="me-lg-5">
+							<a href="/home" class="standard-logo"
+								data-dark-logo="{% static 'front/demos/business/images/logo-dark.png' %}"><img
+									src="{% static 'front/demos/business/images/logo.png' %}" alt="Tuwindi Logo"></a>
+							<a href="/home" class="retina-logo"
+								data-dark-logo="{% static 'front/demos/business/images/logo-dark@2x.png' %}"><img
+									src="{% static 'front/demos/business/images/logo%402x.png' %}" alt="Tuwindi Logo"></a>
+						</div>
+						<div class="header-misc">
+							<a href="/contact" class="button button-rounded button-light">
+								<div>Contacts</div>
+							</a>
+						</div>
+						<div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100">
+								<path
+									d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20">
+								</path>
+								<path d="m 30,50 h 40"></path>
+								<path
+									d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20">
+								</path>
+							</svg>
+						</div>
+
+						<nav class="primary-menu with-arrows me-lg-auto">
+							<ul class="menu-container align-self-start">
+								<li class="menu-item"><span class="menu-bg col-auto align-self-start d-flex"></span>
+								</li>
+								<li class="menu-item current"><a class="menu-link" href="/home">
+										<div>Accueil</div>
+									</a></li>
+								<li class="menu-item"><a class="menu-link" href="/about">
+										<div>Notre identit&eacute;</div>
+									</a></li>
+								<li class="menu-item"><a class="menu-link" href="/projects">
+										<div>Projets</div>
+									</a>
+								</li>
+								<li class="menu-item"><a class="menu-link" href="/opportinuties">
+										<div>Opportinut&eacute;s</div>
+									</a></li>
+								<li class="menu-item"><a class="menu-link" href="/reports">
+										<div>Etudes</div>
+									</a></li>
+								<li class="menu-item"><a class="menu-link" href="/blog">
+										<div>Blog</div>
+									</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header>
+
+		{% block content %}
+    
+		{% endblock %}
+
+		<footer id="footer" style="background-color: #002D40;">
+			<div id="copyrights" class="bg-color">
+				<div class="container clearfix">
+					<div class="row justify-content-between align-items-center">
+						<div class="col-md-6">
+							Copyrights &copy; 2022 Tuwindi - Tous droits r&eacute;serv&eacute;s <br>
+							<div class="copyright-links"><a href="#">Conditions d&apos;utilisation</a> / <a href="#">Propri&eacute;t&eacute;</a>
+							</div>
+						</div>
+						<div class="col-md-6 d-md-flex flex-md-column align-items-md-end mt-4 mt-md-0">
+							<div class="copyrights-menu copyright-links clearfix">
+								<a href="#">A propos</a>/<a href="#">Projets</a>/<a href="#">Blog</a>/<a
+									href="#">Contact</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="floating-contact-wrap">
+			<div class="floating-contact-btn shadow">
+				<i class="floating-contact-icon btn-unactive icon-envelope21"></i>
+				<i class="floating-contact-icon btn-active icon-line-plus"></i>
+			</div>
+			<div class="floating-contact-box">
+				<div id="q-contact" class="widget quick-contact-widget clearfix">
+					<div class="floating-contact-heading bg-color p-4 rounded-top">
+						<h4 class="mb-0 font-secondary h2 ls0">Posez nous vos questions 👋</h4>
+						<p class="mb-0">Entrez en contact avec nous</p>
+					</div>
+					<div class="form-widget bg-white" data-alert-type="false">
+						<div class="form-result"></div>
+						<div class="floating-contact-loader css3-spinner" style="position: absolute;">
+							<div class="css3-spinner-bounce1"></div>
+							<div class="css3-spinner-bounce2"></div>
+							<div class="css3-spinner-bounce3"></div>
+						</div>
+						<div id="floating-contact-submitted" class="p-5 center">
+							<i class="icon-line-mail h1 color"></i>
+							<h4 class="fw-normal mb-0 font-body">Merci de nous avoir contacter. Notre equipe rentrera en contact avec vous dans les plus brefs d&eacute;lais</h4>
+						</div>
+						<form class="mb-0" id="floating-contact"
+							action=">html/canvas/include/form.php" method="post"
+							enctype="multipart/form-data">
+							<div class="input-group mb-3">
+								<span class="input-group-text bg-transparent"><i class="icon-user-alt"></i></span>
+								<input type="text" name="floating-contact-name" id="floating-contact-name"
+									class="form-control required" value="" placeholder="Nom complet">
+							</div>
+							<div class="input-group mb-3">
+								<span class="input-group-text bg-transparent"><i class="icon-at"></i></span>
+								<input type="email" name="floating-contact-email" id="floating-contact-email"
+									class="form-control required" value="" placeholder="Adresse Email">
+							</div>
+							<div class="input-group mb-3">
+								<span class="input-group-text bg-transparent"><i class="icon-comment21"></i></span>
+								<textarea name="floating-contact-message" id="floating-contact-message"
+									class="form-control required" cols="30" rows="4"></textarea>
+							</div>
+							<input type="hidden" id="floating-contact-botcheck" name="floating-contact-botcheck"
+								value="" />
+							<button type="submit" name="floating-contact-submit" class="btn btn-dark w-100 py-2">Envoyer
+								Message</button>
+							<input type="hidden" name="prefix" value="floating-contact-">
+							<input type="hidden" name="subject" value="Messgae From Floating Contact">
+							<input type="hidden" name="html_title" value="Floating Contact Message">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<script src="{% static 'front/js/jquery.js' %}"></script>
+	<script data-cfasync="false"
+		src=">cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="{% static 'front/js/plugins.min.js' %}"></script>
+	<script src="{% static 'front/js/jquery.calendario.js' %}"></script>
+	<script src="{% static 'front/demos/nonprofit/js/events.js' %}"></script>
+	<script src="{% static 'front/js/functions.js' %}"></script>
+
+	<script>
+		jQuery(window).on('load', function () {
+			var swiper = new Swiper('.swiper-container', {
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				freeMode: true,
+				grabCursor: true,
+				scrollbar: {
+					el: '.swiper-scrollbar',
+				},
+			});
+		});
+	</script>
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
+		integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+		data-cf-beacon='{"rayId":"6e9aa3d48ad62079","token":"0627f0b8b73941069bc19139e63db853","version":"2021.12.0","si":100}'
+		crossorigin="anonymous"></script>
+
+	<script>
+		jQuery(document).ready(function ($) {
+			var elementParent = $('.floating-contact-wrap');
+			$('.floating-contact-btn, .btn-contact').off('click').on('click', function (e) {
+				elementParent.toggleClass('active',);
+				e.preventDefault(e);
+			});
+		});
+
+		var cal = $('#calendar').calendario({
+			onDayClick: function ($el, $contentEl, dateProperties) {
+				for (var key in dateProperties) {
+					console.log(key + ' = ' + dateProperties[key]);
+				}
+			},
+			caldata: canvasEvents
+		}),
+			$month = $('#calendar-month').html(cal.getMonthName()),
+			$year = $('#calendar-year').html(cal.getYear());
+
+		$('#calendar-next').on('click', function () {
+			cal.gotoNextMonth(updateMonthYear);
+		});
+		$('#calendar-prev').on('click', function () {
+			cal.gotoPreviousMonth(updateMonthYear);
+		});
+		$('#calendar-current').on('click', function () {
+			cal.gotoNow(updateMonthYear);
+		});
+
+		function updateMonthYear() {
+			$month.html(cal.getMonthName());
+			$year.html(cal.getYear());
+		};
+
+	</script>
+	<script defer
+		src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
+		integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+		data-cf-beacon='{"rayId":"6e9570a72e5b203d","token":"0627f0b8b73941069bc19139e63db853","version":"2021.12.0","si":100}'
+		crossorigin="anonymous"></script>
+</body>
+</html>

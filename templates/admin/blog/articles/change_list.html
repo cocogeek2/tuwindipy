@@ -1,0 +1,87 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_list %}
+
+{% block content %}
+<!-- Breadcrumb -->
+  <section class="breadcrumb lg:flex items-start">
+    <div>
+        <h1>Blog</h1>
+        <ul>
+            <li><a href="#">Pages</a></li>
+            <li class="divider la la-arrow-right"></li>
+            <li><a href="#">Articles</a></li>            
+        </ul>
+    </div>
+
+    <div class="flex flex-wrap gap-2 items-center ltr:ml-auto rtl:mr-auto mt-5 lg:mt-0">
+      <!-- Search -->
+      <form class="flex flex-auto items-center" action="#">
+          <label class="form-control-addon-within rounded-full">
+              <input type="text" class="form-control border-none" placeholder="Search">
+              <button type="button"
+                  class="btn btn-link text-gray-300 dark:text-gray-700 dark:hover:text-primary text-xl leading-none la la-search ltr:mr-4 rtl:ml-4"></button>
+          </label>
+      </form>
+
+      <div class="flex gap-x-2">
+
+        <!-- Sort By -->
+        <div class="dropdown">
+            <button class="btn btn_outlined btn_secondary uppercase" data-toggle="dropdown-menu">
+                Sort By
+                <span class="ltr:ml-3 rtl:mr-3 la la-caret-down text-xl leading-none"></span>
+            </button>
+            <div class="dropdown-menu">
+                <a href="#">Ascending</a>
+                <a href="#">Descending</a>
+            </div>
+        </div>
+
+        <!-- Add New -->
+        <button class="btn btn_primary uppercase">
+            {% block object-tools %}
+                <ul class="object-tools">
+                {% block object-tools-items %}
+                    {% change_list_object_tools %}
+                {% endblock %}
+                </ul>
+            {% endblock %}
+        </button>
+      </div>
+  </div>
+
+</section>
+    <div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
+        {% block filters %}
+        {% if cl.has_filters %}
+          <div id="changelist-filter">
+            <h2>{% translate 'Filter' %}</h2>
+            {% if cl.has_active_filters %}<h3 id="changelist-filter-clear">
+              <a href="{{ cl.clear_all_filters_qs }}">&#10006; {% translate "Clear all filters" %}</a>
+            </h3>{% endif %}
+            {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+          </div>
+      {% endif %}
+      {% endblock %}
+        <div>
+            <div>
+                {% block search %}{% search_form cl %}{% endblock %}
+                {% block date_hierarchy %}{% if cl.date_hierarchy %}{% date_hierarchy cl %}{% endif %}{% endblock %}
+        
+                <form id="changelist-form" method="post"{% if cl.formset and cl.formset.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
+                    {% if cl.formset %}
+                        <div>{{ cl.formset.management_form }}</div>
+                    {% endif %}            
+                    {% block result_list %}
+                        {% if action_form and actions_on_top and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+                        {% result_list cl %}
+                        {% if action_form and actions_on_bottom and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+                    {% endblock %}
+                    {% block pagination %}{% pagination cl %}{% endblock %}
+                </form>
+            </div>
+        </div>
+     
+    </div>
+
+{% endblock %}

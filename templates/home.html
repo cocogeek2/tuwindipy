@@ -1,0 +1,733 @@
+{% extends './base/layout.html' %}
+{% load static %}
+{% block content %}
+<section id="slider" class="slider-element dark swiper_wrapper slider-parallax min-vh-75">
+    <div class="slider-inner">
+        <div class="swiper-container swiper-parent">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide dark">
+                    <div class="container">
+                        <div class="slider-caption">
+                            <div>
+                                <h2 class="nott" data-animate="fadeInUp">Bienvenue chez Tuwindi.</h2>
+                                <p>We provide tech solutions to make our cities smart.</p>
+                                <a href="/about" data-animate="fadeInUp" data-delay="400"
+                                    class="button button-rounded button-large button-light shadow nott ls0 ms-0 mt-4">Qui sommes-nous ?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- http://tuwindi.org/wp-content/uploads/2018/09/fond.jpg -->
+                    <div class="swiper-slide-bg"
+                        style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('http://tuwindi.io/wp-content/uploads/2019/12/opportinuit%C3%A9.jpg') no-repeat center center; background-size: cover;">
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="swiper-scrollbar" style="display: block !important;">
+                <div class="swiper-scrollbar-drag" style="display: block !important;">
+                    <div class="slide-number">
+                        <div class="slide-number-current"></div><span>/</span>
+                        <div class="slide-number-total"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content">
+    <div class="content-wrap py-0" style="overflow: visible">
+        <svg viewBox="0 0 1382 58" width="100%" height="60" preserveAspectRatio="none"
+            style="position: absolute; top: -58px; left:0; z-index: 1">
+            <path style="fill:#FFF;" d="M1.52.62s802.13,127,1380,0v56H.51Z" />
+        </svg>
+        <div class="container">
+            <div class="slider-feature w-100">
+                <div class="row justify-content-center">
+                    <div class="col-md-3 px-1">
+                        <a href="/reports"
+                            class="card center border-start-0 border-end-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 fw-semibold text-uppercase ls1">
+                            <div class="card-body">
+                                <i class="icon-line-align-center"></i>Rapports
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 px-1">
+                        <a href="/projects?category=projets"
+                            class="card center border-start-0 border-end-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 fw-semibold text-uppercase ls1">
+                            <div class="card-body">
+                                <i class="icon-line-umbrella"></i>Technologies
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 px-1">
+                        <a href="/projects?category=initiatives"
+                            class="card center border-start-0 border-end-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 fw-semibold text-uppercase ls1">
+                            <div class="card-body">
+                                <i class="icon-line-mail"></i>Initiatives
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section mt-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 center">
+                        <div class="heading-block border-bottom-0 mb-4">
+                            <h2 class="mb-4 nott">Notre Travail</h2>
+                        </div>
+                        <div class="svg-line bottommargin-sm">
+                            <img src="{% static 'front/demos/nonprofit/images/divider-1.svg' %}" alt="svg divider" height="20">
+                        </div>
+                        <p>Nous apportons des solutions technologiques pour accroître la qualité de la
+                            démocratie et du développement.<br />
+                            <span>NOTRE MISSION EST DE PROPULSER LE DÉVELOPPEMENT ECONOMIQUE ET SOCIAL PAR
+                                L’UTILISATION INNOVANTE DES TECHNOLOGIES DE LA COMMUNICATION ET DE L’INFORMATION
+                                TIC</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-5 col-mb-50 mb-0">
+                  {%for intervention in domaines %}
+                    <div class="col-md-3">
+                        <div class="feature-box flex-column mx-0">
+                            <div class="fbox-media position-relative">
+                                <img src="{% static '' %}{{intervention.icon}}" alt="Featured Icon"
+                                    width="60" class="mb-3">
+                            </div>
+                            <div class="fbox-content px-0">
+                                <h3 class="nott ls0"><a href="#" class="text-dark">{{intervention.label}}</a>
+                                </h3>
+                                <p>{{intervention.description}}</p>
+                                <a href="#"
+                                    class="button button-rounded button-border nott ls0 fw-normal ms-0 mt-4">Voir
+                                    plus</a>
+                            </div>
+                        </div>
+                    </div>
+                  {%endfor%}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="w-100 position-relative">
+                <!-- front/demos/nonprofit/images/others/3.jpg -->
+                <div class="donor-img d-flex align-items-center rounded parallax mx-auto shadow-sm w-100"
+                    data-bottom-top="background-position:0px 0px;"
+                    data-top-bottom="background-position:0px -50px;"
+                    style="height: 500px; background: url('http://tuwindi.io/wp-content/uploads/2014/10/equipe.jpg') no-repeat center center / cover">
+                </div>
+                <div class="card bg-white border-0 center py-sm-4 px-sm-5 p-2 shadow-sm"
+                    style="position: absolute; top: 50%; right: 80px; transform: translateY(-50%); background:rgba(255,255,255,0.8) !important">
+                    <div class="card-body">
+                        <div class="color h1 mb-3"><i class="icon-location"></i></div>
+                        <small class="text-uppercase fw-normal ls2 text-muted mb-3 d-block">Nos bureaux</small>
+                        <h3 class="display-3 fw-bold mb-3 font-secondary">{{bureaux|length}} pays</h3>
+                        <p class="text-uppercase fw-medium text-muted">                        
+                            {% for bureau in bureaux %}                           
+                                {{bureau.pays}}
+                            {%endfor%}
+                        </p>
+                        <a href="/contact" class="button-svg">Voir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section bg-transparent mt-0 mb-4">
+            <div class="container clearfix">
+                <div class="row justify-content-center" style="margin-top: 100px">
+                    <div class="col-md-7 center">
+                        <div class="heading-block border-bottom-0 mb-4">
+                            <h2 class="mb-4 nott">Nos projets</h2>
+                        </div>
+                        <div class="svg-line bottommargin-sm clearfix">
+                            <img src="{% static 'front/demos/nonprofit/images/divider-1.svg' %}" alt="svg divider" height="20">
+                        </div>
+                        <p>De sa cr&eacute;ation &agrave; nos jours, Tuwindi a travaill&eacute; sur plus de 50 projets &agrave; travers le monde. Senegal, Mali, Niger, Guinn&eacute;e, Nepal, RDC, C&ocirc;te d&apos;Ivoire, Somalie, Benin,...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel owl-carousel-full image-carousel carousel-widget topmargin-sm charity-card"
+                data-stage-padding="20" data-margin="10" data-center="true" data-loop="true" data-nav="true"
+                data-autoplay="500000" data-speed="400" data-pagi="true" data-items-xs="1" data-items-sm="2"
+                data-items-md="2" data-items-lg="3" data-items-xl="4">
+                {% for projet in projects %}
+                    <div class="oc-item text-start">
+                        <img src="{{projet.img}}" alt="Image 1" class="rounded">
+                        <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                            <small class="text-uppercase fw-normal ls1 color mb-2 d-block">{{projet.idDomaine.label}}</small>
+                            <h3 class="mb-3"><a href="/project/details?idProjet={{projet.idArticle}}">{{projet.title}}</a></h3>
+                            
+                            <p class="mb-4 text-black-50">{{projet.conent}}</p>
+                            <a href="/project/details?idProjet={{projet.idArticle}}"
+                                class="button button-rounded button-border nott ls0 fw-medium m-0 d-flex align-self-start">En
+                                savoir plus</a>
+                        </div>
+                    </div>
+                {%endfor%}
+                <!-- <div class="oc-item text-start">
+                    <img src="{% static 'front/demos/nonprofit/images/cause/3.jpg' %}" alt="Image 1" class="rounded">
+                    <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                        <small class="text-uppercase fw-normal ls1 color mb-2 d-block">Education</small>
+                        <h3 class="mb-3"><a href="demo-nonprofit-causes-single.html">Education for All</a></h3>
+                    
+                        <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Nostrum voluptatum quaerat, nisi illum rerum consequatur nemo.</p>
+                        <a href="demo-nonprofit-causes-single.html"
+                            class="button button-rounded button-border nott ls0 fw-medium m-0 d-flex align-self-start">En
+                            savoir plus</a>
+                    </div>
+                </div>
+                <div class="oc-item text-start">
+                    <img src="{% static 'front/demos/nonprofit/images/cause/2.jpg' %}" alt="Image 1" class="rounded">
+                    <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                        <small class="text-uppercase fw-normal ls1 color mb-2 d-block">Domaine du projet</small>
+                        <h3 class="mb-3"><a href="demo-nonprofit-causes-single.html">Titre du projet</a></h3>
+                        
+                        <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Aut atque quidem consequuntur officiis vitae illo omnis inventore aliquam assumenda
+                            iusto mollitia illum similique eum libero rem possimus et, ipsam sapiente..</p>
+                        <a href="demo-nonprofit-causes-single.html"
+                            class="button button-rounded button-border nott ls0 fw-medium m-0 d-flex align-self-start">En
+                            savoir plus</a>
+                    </div>
+                </div>
+                <div class="oc-item text-start">
+                    <img src="{% static 'front/demos/nonprofit/images/cause/4.jpg' %}" alt="Image 1" class="rounded">
+                    <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                        <small class="text-uppercase fw-normal ls1 color mb-2 d-block">Domaine du projet</small>
+                        <h3 class="mb-3"><a href="demo-nonprofit-causes-single.html">Titre du projet</a></h3>
+                        <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Aut atque quidem consequuntur officiis vitae illo omnis inventore aliquam assumenda
+                            iusto mollitia illum similique eum libero rem possimus et, ipsam sapiente..</p>
+                        <a href="demo-nonprofit-causes-single.html"
+                            class="button button-rounded button-border nott ls0 fw-medium m-0 d-flex align-self-start">En
+                            savoir plus</a>
+                    </div>
+                </div>
+                <div class="oc-item text-start">
+                    <img src="{% static 'front/demos/nonprofit/images/cause/5.jpg' %}" alt="Image 1" class="rounded">
+                    <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                        <small class="text-uppercase fw-normal ls1 color mb-2 d-block">Domaine du projet</small>
+                        <h3 class="mb-3"><a href="demo-nonprofit-causes-single.html">Titre du projet</a></h3>
+                        <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Aut atque quidem consequuntur officiis vitae illo omnis inventore aliquam assumenda
+                            iusto mollitia illum similique eum libero rem possimus et, ipsam sapiente..</p>
+                        <a href="demo-nonprofit-causes-single.html"
+                            class="button button-rounded button-border nott ls0 fw-medium m-0 d-flex align-self-start">En
+                            savoir plus</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="container-fluid my-5 clearfix">
+            <div class="d-flex flex-column align-items-center justify-content-center center counter-section position-relative py-5"
+                style="background: url('static/front/demos/nonprofit/images/world-map.png') no-repeat center center/ contain">
+                <div class="mx-auto center" style="max-width: 1000px">
+                    <h3>Notre objectif est d’utiliser les TICs pour soutenir le développement social et
+                        économique. </h3>
+                </div>
+                <div class="row align-items-stretch m-0 w-100 clearfix">
+                    <div class="col-lg-3 col-sm-6 center mt-5">
+                        <img src="{% static 'front/demos/nonprofit/images/icons/education.svg' %}" alt="Counter Icon" width="70"
+                            class="mb-4">
+                        <div class="counter font-secondary"><span data-from="100" data-to="11265"
+                                data-refresh-interval="50" data-speed="2100" data-comma="true"></span>+</div>
+                        <h5 class="nott ls0 mt-0"><u>Projets r&eacute;alis&eacute;s</u></h5>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 center mt-5">
+                        <img src="{% static 'front/demos/nonprofit/images/icons/educated.svg' %}" alt="Counter Icon" width="70"
+                            class="mb-4">
+                        <div class="counter font-secondary"><span data-from="100" data-to="2500"
+                                data-refresh-interval="50" data-speed="2200" data-comma="true"></span>+</div>
+                        <h5 class="nott ls0 mt-0"><u>Domaines couverts</u></h5>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 center mt-5">
+                        <img src="{% static 'front/demos/nonprofit/images/icons/volunteers.svg' %}" alt="Counter Icon" width="70"
+                            class="mb-4">
+                        <div class="counter font-secondary"><span data-from="100" data-to="17408"
+                                data-refresh-interval="25" data-speed="2300" data-comma="true"></span>+</div>
+                        <h5 class="nott ls0 mt-0"><u>Personnes form&eacute;es</u></h5>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 center mt-5">
+                        <img src="{% static 'front/demos/nonprofit/images/icons/shelter.svg' %}" alt="Counter Icon" width="70"
+                            class="mb-4">
+                        <div class="counter font-secondary"><span data-from="150" data-to="13413"
+                                data-refresh-interval="50" data-speed="2100" data-comma="true"></span>+</div>
+                        <h5 class="nott ls0 mt-0"><u>Partenaires</u></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    
+        <section id="content">
+            <div class="content-wrap overflow-visible">
+                <svg viewBox="0 0 1382 58" width="100%" height="60" preserveAspectRatio="none"
+                    style="position: absolute; top: -58px; left:0; z-index: 1">
+                    <path style="fill:#FFF;" d="M1.52.62s802.13,127,1380,0v56H.51Z" />
+                </svg>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 center">
+                            <div class="heading-block border-bottom-0 mb-4">
+                                <h2 class="mb-4 nott">A la une chez Tuwindi</h2>
+                            </div>
+                            <div class="svg-line bottommargin-sm">
+                                <img src="{% static 'front/demos/nonprofit/images/divider-1.svg' %}" alt="svg divider" height="20">
+                            </div>
+                            <!-- <p>Nous apportons des solutions technologiques pour accroître la qualité de la démocratie et du développement.<br/> -->
+                        </div>
+                    </div>
+
+                    <div class="row col-mb-30">
+                        {% for article in articles %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="charity-card h-shadow shadow-ts card rounded-5">
+                                    <a href="article/">
+                                        <img src="{{article.img}}" alt="Image" class="card-img-top">
+                                    </a>
+                                    <div class="px-4 py-3 charity-card-title">
+                                        <small class="text-uppercase fw-normal ls1 mb-2 d-block">{{article.idUser.username}}</small>
+                                        <h3 class="mb-3"><a href="article/details?idArticle={{article.idArticle}}">{{article.title}}</a></h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="mb-0 text-black-50">{{article.content}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <div class="section bg-transparent">
+            <div class="container clearfix">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-7 center">
+                        <div class="heading-block border-bottom-0 mb-4">
+                            <h2 class="mb-4 nott">Notre &eacute;quipe</h2>
+                        </div>
+                        <div class="svg-line bottommargin-sm clearfix">
+                            <img src="{% static 'front/demos/nonprofit/images/divider-1.svg' %}" alt="svg divider" height="20">
+                        </div>
+                        <p>Tuwindi intervient dans le secteur de la gouvernance, de la citoyenneté, des droits
+                            de l’homme et de la démocratie.
+                            Nous sommes une équipe intègre, passionnée, créative et innovante.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <div class="team overflow-hidden">
+                            <div class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Nom Prenom">
+                            </div>
+                            <div class="team-desc">
+                                <h4 class="team-title pt-3 mb-0 fw-medium nott">Nom Prenom<small>Poste chez Tuwindi</small></h4>
+                            </div>
+                        </div>
+                        <div class="team mt-5">
+                            <div class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Nom Prenom">
+                            </div>
+                            <div class="team-desc">
+                                <h4 class="team-title pt-3 mb-0 fw-medium nott">Nom Prenom<small>Poste chez Tuwindi</small></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6 mt-4">
+                        <div class="team">
+                            <div class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Nom Prenom">
+                            </div>
+                            <div class="team-desc">
+                                <h4 class="team-title pt-3 mb-0 fw-medium nott">Nom Prenom<small>Poste chez Tuwindi</small></h4>
+                            </div>
+                        </div>
+                        <div class="team mt-5">
+                            <div class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Weir Doe">
+                            </div>
+                            <div class="team-desc">
+                                <h4 class="team-title pt-3 mb-0 fw-medium nott">Weir
+                                    Doe<small>Poste chez Tuwindi</small></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <div class="team">
+                            <div class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Nom Prenom">
+                            </div>
+                            <div class="team-desc">
+                                <h4 class="team-title pt-3 mb-0 fw-medium nott">Nom Prenom<small>Poste chez Tuwindi</small></h4>
+                            </div>
+                        </div>
+                        <div class="team mt-5">
+                            <div class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Nom Prenom ">
+                            </div>
+                            <div class="team-desc">
+                                <h4 class="team-title pt-3 mb-0 fw-medium nott">Nom Prenom
+                                    <small>Poste chez Tuwindi</small></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6 mt-5">
+                        <div class="team">
+                            <div class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Nom Prenom">
+                            </div>
+                            <div class="team-desc">
+                                <h4 class="team-title pt-3 mb-0 fw-medium nott">Nom Prenom<small>Poste chez Tuwindi</small></h4>
+                            </div>
+                        </div>
+                        <div class="team mt-5">
+                            <div class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Nom Prenom">
+                            </div>
+                            <div class="team-desc">
+                                <h4 class="team-title pt-3 mb-0 fw-medium nott">Nom Prenom<small>Poste chez Tuwindi</small></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6 mt-1">
+                        <div class="team">
+                            <div class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Nom Prenom">
+                            </div>
+                            <div class="team-desc">
+                                <h4 class="team-title pt-3 mb-0 fw-medium nott">Nom Prenom<small>Poste chez Tuwindi</small></h4>
+                            </div>
+                        </div>
+                        <div class="team full-border imagescalein mt-5">
+                            <a href="#" class="team-image">
+                                <img src="{% static 'front/demos/nonprofit/images/team/1.jpg' %}" alt="Apply Volunteer"
+                                    class="rounded-0">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <section id="content" class="block-testimonials-3">
+            <div class="content-wrap">
+                <div class="container clearfix">
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-xl-6 col-lg-8 text-center">
+                            <h3 class="h1 fw-bold mb-4">Testimonials</h3>
+                            <h5 class="text-uppercase ls2 fw-medium op-07">❤️ Show what your Customers say about you ❤️</h5>
+                        </div>
+                    </div>
+                </div>
+        
+                <section class="swiper_wrapper h-auto customjs clearfix">
+                    <div class="swiper-container swiper-parent">
+                        <div class="swiper-wrapper h-auto mb-4">
+                            <div class="swiper-slide">
+                                <div class="testimonial-col">
+                                    <p>A great thing that there are many /static/front/demos available otherwise all of the great
+                                        implementation and features would never be used or understood the right way.</p>
+                                    <div class="d-flex align-items-center">
+                                        <img src="/static/front/images/blocks/preview/team/4.jpg" alt="User" width="40"
+                                            class="rounded-circle">
+                                        <div class="ms-3">
+                                            <h5 class="fw-medium mb-0"><a href="https://tuwindi.io/ratings/3227978"
+                                                    target="_blank">@wickdevs</a></h5>
+                                            <h6 class="fw-normal mb-0 op-06">tuwindi.io</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </section>
+                <div class="text-center"><a href="/temoignages" class="btn btn-lg btn-danger rounded-1 px-4 mt-5">Voir tout</a></div>
+            </div>
+        </section>
+
+        <div class="bg-color subscribe-section position-relative" style="margin-top: 100px;">
+            <div class="container" style="z-index: 2;">
+                <div class="center collapsed subscribe-section-target" data-bs-toggle="collapse"
+                    data-bs-target="#target-1">
+                    <div class="subscribe-icon"><i class="icon-envelope21"></i></div>
+                    <h2 class="mb-0 mt-2 position-relative" style="z-index: 1;color:#FFF">Cliquez ici pour vous abonner &agrave; notre
+                        Newsletter <i class="icon-arrow-down position-relative" style="top: 5px"></i>
+                    </h2>
+                </div>
+                <div class="collapse" id="target-1">
+                    <div class="form-widget pb-5" data-alert-type="false">
+                        <div class="form-result"></div>
+                        <div class="nonprofit-loader css3-spinner" style="position: absolute;">
+                            <div class="css3-spinner-bounce1"></div>
+                            <div class="css3-spinner-bounce2"></div>
+                            <div class="css3-spinner-bounce3"></div>
+                        </div>
+                        <div id="nonprofit-submitted" class="center">
+                            <h4 class="fw-semibold mb-0">Merci pour votre int&eacute;rêt. Votre inscription &agrave; &eacute;t&eacute; bien prise en compte. Vous allez d&eacute;sormais recevoir les publications de Tuwindi dans votre boite email</h4>
+                        </div>
+                        <form id="nonprofit" class="row mt-2"
+                            action="" method="post"
+                            enctype="multipart/form-data">
+                            <div class="col-md-4 mb-4 mb-md-1">
+                                <label style="color: #FFF;" for="nonprofit-name">Nom Complet :</label>
+                                <input type="text" name="nonprofit-name" id="nonprofit-name"
+                                    class="form-control form-control-caret border-form-control required" value=""
+                                    placeholder="Enter your Full Name">
+                            </div>
+                            <div class="col-md-4 mb-4 mb-md-1">
+                                <label style="color: #FFF;" for="nonprofit-phone">Contact:</label>
+                                <input type="text" name="nonprofit-phone" id="nonprofit-phone"
+                                    class="form-control form-control-caret border-form-control" value=""
+                                    placeholder="Numero de telephone">
+                            </div>
+                            <div class="col-md-4 mb-4 mb-md-1">
+                                <label style="color: #FFF;"  for="nonprofit-email">Email:</label>
+                                <input type="email" name="nonprofit-email" id="nonprofit-email"
+                                    class="form-control form-control-caret border-form-control required" value=""
+                                    placeholder="Adresse Email">
+                            </div>
+                            <div class="col-12 d-none">
+                                <input type="text" id="nonprofit-botcheck" name="nonprofit-botcheck" value="" />
+                            </div>
+                            <button type="submit" name="nonprofit-submit"
+                                class="btn button button-rounded button-xlarge button-dark bg-dark shadow nott ls0 m-0 subscribe-button">
+                                S&apos;inscrire Maintenant</button>
+                            <input type="hidden" name="prefix" value="nonprofit-">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div style="position: absolute; bottom: -20px; left: 0; width: 100%; height: 60px; z-index: 1;">
+            </div>
+        </div>
+        <div class="section m-0 p-0 row align-items-stretch clearfix"
+            style="background-color: rgba(198,192,156, 0.15);">
+            <div class="col-lg-4 dark d-flex flex-column align-items-center center justify-content-center"
+                style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('static/front/demos/nonprofit/images/others/event.jpg') center center repeat; background-size: cover; min-height: 300px;">
+                <h2 class="display-4 px-4 fw-bold mb-4 d-block">Travaillons ensemble maintenant</h2>
+            </div>
+            <div class="col-lg-8 col-padding">
+                <div class="block-form-2">
+                    <div class="form-widget" data-alert-type="inline">
+                        <div class="form-result"></div>
+                        <form id="step-form" class="mb-0"
+                            action="/contact/submit" method="post"
+                            enctype="multipart/form-data">
+                            <div class="form-process"></div>
+                            <!-- <div id="tab-reservation" class="nav nav-pills flex-column flex-lg-row" role="tablist">
+                                <a class="nav-link active ms-0" data-bs-toggle="list"
+                                    href="#tab-reservation-details" role="tab">1. Your Details</a>
+                                <a class="nav-link ms-0 mt-2 mt-lg-0 ms-lg-3" data-bs-toggle="list"
+                                    href="#tab-reservation-select-address" role="tab">2. Your Address</a>
+                                <a class="nav-link ms-0 mt-2 mt-lg-0 ms-lg-3" data-bs-toggle="list"
+                                    href="#tab-reservation-msg" role="tab">3. Your Message</a>
+                            </div> -->
+                            <div class="mt-5">
+                                <!-- <span class="op-05 text-smaller ls1">STEP - 1/3</span> -->
+                                <h2 class="mb-5 text-uppercase ls1 fw-bold">Veuillez remplir le formulaire</h2>
+                                <div class="row">
+                                    <div class="col-6 mb-4">
+                                        <label for="step-form-first-name">Prenom :</label>
+                                        <input type="text" name="step-form-first-name" id="step-form-first-name"
+                                            class="form-control required" value="" placeholder="">
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <label for="step-form-last-name"> Nom:</label>
+                                        <input type="text" name="step-form-last-name" id="step-form-last-name"
+                                            class="form-control required" value="" placeholder="">
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <label for="step-form-email">Email :</label>
+                                        <input type="email" name="step-form-email" id="step-form-email"
+                                            class="form-control required" value=""
+                                            placeholder="Example : kibaru@tuwindi.org">
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <label for="step-form-phone">Tel:</label><br>
+                                        <input type="text" name="step-form-phone" id="step-form-phone"
+                                            class="form-control required" value=""
+                                            placeholder="Exemple : +223 XX XX XX XX">
+                                    </div>
+                                    <div class="col-6 col-6 mb-4">
+                                        <label for="step-form-age">Organisation</label>
+                                        <input type="text" value="" class="form-control required text-start"
+                                            id="step-form-age" name="organisation">
+                                    </div>
+                                    <div class="col-6 col-6 mb-5">
+                                        <label for="step-form-url">Site web (Optional):</label>
+                                        <input type="text" name="step-form-url" id="step-form-url"
+                                            class="form-control" value=""
+                                            placeholder="https://tuwindi.io/">
+                                    </div>
+                                    <div class="col-12 mb-5">
+                                        <label for="step-form-message">Message:</label>
+                                        <textarea class="required form-control" id="step-form-message"
+                                            name="step-form-message" rows="5"
+                                            placeholder="Ecrivez votre message ici..."></textarea>
+                                    </div>
+                                    <div class="col-12 d-none">
+                                        <input type="text" id="step-form-botcheck" name="step-form-botcheck"
+                                            value="" />
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" name="step-form-submit"
+                                            class="btn px-5 py-3 text-white"
+                                            style="background-color: #000;">Envoyer</button>
+                                    </div>
+                                    <!-- <div class="w-100 clear"></div>
+                                    <div class="col-12">
+                                        <a href="#"
+                                            class="btn px-5 py-3 tab-action-btn-next float-end text-white"
+                                            style="background-color: #3D1144;">Soumettre</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section bg-transparent" style="padding: 80px 0">
+            <div class="container clearfix">
+                <div class="row justify-content-center">
+                    <div class="col-md-7 center">
+                        <div class="heading-block border-bottom-0 mb-4">
+                            <h2 class="mb-4 nott">Nos valeureux partenaires</h2>
+                        </div>
+                        <div class="svg-line bottommargin-sm clearfix">
+                            <!-- <img src="{% static 'front/demos/nonprofit/images/divider-1.svg' %}" alt="svg divider" height="15"> -->
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quasi, dolorum
+                            blanditiis eius laboriosam, quidem temporibus, dolor quod voluptatum perferendis
+                            ullam. Odio sequi at dolore consequatur ad, odit expedita tenetur.</p>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="col-md-11 my-5">
+                        <ul class="clients-grid grid-2 grid-sm-3 grid-md-5 mb-0">
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/1.png' %}" alt="Clients"></a>
+                            </li>
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/2.png' %}" alt="Clients"></a>
+                            </li>
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/3.png' %}" alt="Clients"></a>
+                            </li>
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/4.png' %}" alt="Clients"></a>
+                            </li>
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/5.png' %}" alt="Clients"></a>
+                            </li>
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/6.png' %}" alt="Clients"></a>
+                            </li>
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/7.png' %}" alt="Clients"></a>
+                            </li>
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/8.png' %}" alt="Clients"></a>
+                            </li>
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/9.png' %}" alt="Clients"></a>
+                            </li>
+                            <li class="grid-item"><a href="#"><img src="{% static 'front/images/clients/10.png' %}"
+                                        alt="Clients"></a></li>
+                        </ul>
+                    </div>
+                    <!-- <h5 class="fw-normal text-black-50 mb-0">If you want to work with for nonprofit? <a href="demo-nonprofit-contact.html"><u>Send your Details</u></a>.</h5> -->
+                </div>
+            </div>
+        </div>
+        <div class="line line-sm my-0 clearfix"></div>
+        <div class="clear"></div>
+        <div class="section section-details mb-0 bg-white"
+            style="padding: 80px 0 160px; margin : 0 !important; background:#f7f6f0 !important;">
+            <!-- /*url('front/demos/nonprofit/images/others/6.jpg')*/ no-repeat bottom right / cover -->
+            <div class="w-100 h-100 d-none d-md-block" style="position: absolute; top: 0; left: 0;"></div>
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="col-md-4 px-4 mb-5">
+                        <h4 class="fw-medium mb-4">A propos de Tuwindi</h4>
+                        <p class="mb-3">Proactively re-engineer pandemic models rather than cost effective
+                            catalysts for change.</p>
+                        <abbr title="Location"><strong>Addresse:</strong></abbr><a href="#"> Voir la map</a><br>
+                        <abbr title="Phone Number"><strong>Tel:</strong></abbr> (223) 71 91 91 91<br>
+                        <abbr title="Email Address"><strong>Email:</strong></abbr> <a
+                            href=">cdn-cgi/l/email-protection"
+                            class="__cf_email__">kibaru@tuwindi.org</a>
+                    </div>
+                    <div class="col-md-4 px-4 mb-5">
+                        <h4 class="fw-medium mb-4">Nos Partenaires</h4>
+                        <p>Conveniently pontificate worldwide services vis-a-vis e-business portals.
+                            Phosfluorescently re-engineer global methodologies vis-a-vis standards compliant
+                            platforms.</p>
+                    </div>
+                    <div class="col-md-4 px-4 mb-5">
+                        <h4 class="fw-medium mb-4">Mission</h4>
+                        <p>Collaboratively reintermediate enterprise e-commerce with turnkey architectures.
+                            Conveniently actualize <a href="#">testing</a> procedures before superior
+                            meta-services. Formulate cross-unit <a href="#">Energistically</a> with pandemic
+                            markets.</p>
+                    </div>
+                    <div class="col-md-4 px-4 mb-5 mb-md-0">
+                        <h4 class="fw-medium mb-4">Assitance</h4>
+                        <p class="mb-3">Contactez-nous pour tout besoin d'information, notre &eacute;quipe est
+                            &agrave; votre disposition</p>
+                        <a href="#" class="mb-1 d-block"><i class="icon-envelope21 position-relative"
+                                style="top: 1px; color:black !important"></i> <span
+                                class="__cf_email__">kibaru@tuwindi.org</span></a>
+                        <div class="fw-medium mb-2 d-block">Du Lundi au Vendredi 09:00 - 17:00</div>
+                        <a href="#" class="social-icon si-dark si-small si-facebook" title="Facebook">
+                            <i class="icon-facebook"></i>
+                            <i class="icon-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon si-dark si-small si-facebook" title="Facebook">
+                            <i class="icon-twitter"></i>
+                            <i class="icon-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon si-dark si-small si-facebook" title="Facebook">
+                            <i class="icon-linkdIn"></i>
+                            <i class="icon-linkdIn"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-4 px-4 mb-5 mb-md-0">
+                        <h4 class="fw-medium mb-4">Temoignages</h4>
+                        <div id="oc-testi" class="owl-carousel testimonials-carousel carousel-widget"
+                            data-margin="0" data-nav="false" data-pagi="false" data-items="1"
+                            data-autoplay="6000" data-loop="true" data-animate-in="fadeIn"
+                            data-animate-out="fadeOut">
+                            <div class="oc-item">
+                                <div class="testimonial bg-transparent shadow-none border-0 p-0">
+                                    <div class="testi-content">
+                                        <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur
+                                            ullam quibusdam cum libero illo rerum repellendus!</p>
+                                        <div class="testi-meta ls1"> Nom de l'auteur</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oc-item">
+                                <div class="testimonial bg-transparent shadow-none border-0 p-0">
+                                    <div class="testi-content">
+                                        <p>Completely e-enable premier infomediaries and long-term high-impact
+                                            process improvements. Completely provide access to B2C.</p>
+                                        <div class="testi-meta ls1">Nom de l'auteur</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .icon-envelope21::before{
+        color: #000!important;
+    }
+    .form-control-caret{
+        caret-color: red;
+    }
+</style>
+{% endblock %}
